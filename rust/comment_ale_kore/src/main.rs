@@ -8,7 +8,7 @@
 //! - list
 //! - list
 //!
-//! [link](https://github.com/ah-y)
+//! [link](https://github.com/sugiura-hiromichi)
 //!
 //! # Header
 //!
@@ -36,7 +36,7 @@
 mod commented_module {
 	//! This is DocComment for module
 
-	//! This is DocComment for struct
+	/// This is DocComment for struct
 	struct CommentedStruct {}
 }
 
