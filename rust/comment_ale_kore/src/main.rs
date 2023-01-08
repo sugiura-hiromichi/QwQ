@@ -50,17 +50,17 @@ mod commented_module {
 fn main() {
 	//This is normal Comment
 	// FIX:
-	// e:
+	// e: `e` stands for error
 	// TODO:
-	// q:
+	// q: `q` stands for question
 	// HACK:
-	// a:
+	// a: `a` stands for attention
 	// WARN:
-	// x:
+	// x: `x` stands for XXX
 	// PERF:
-	// p:
+	// p: `p` stands for performance
 	// NOTE:
-	// d:
+	// d: `d` stands for description
 	// TEST:
-	// t:
+	// t: `t` stands for test
 }
