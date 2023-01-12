@@ -1,7 +1,5 @@
 # [12/29](https://www.youtube.com/watch?v=deNGkzUlhZU)
 
-## New Words
-
 - puberty: 思春期
 - mature: 成熟した[ad] 成熟する[v]
 - hypothalamus: 視床下部
@@ -9,9 +7,6 @@
 - undergo: 経る
 - prime: 準備する[v]
 - nucleus accumbens: 側坐核
-
-### OverLooked
-
 - overlook: 見落とす
 - reproductive: 生殖の
 - ripen: 熟する
@@ -26,3 +21,58 @@
 - rash: 軽率な
 - impulsive: 衝動的な
 - in the heat of the moment: 白熱している時に
+
+# [1/11](https://www.youtube.com/watch?v=9_AuKM7S6TU)
+
+- nestled->nestle: 落ち着く
+- imagery: 映像
+- rodent: 齧歯類
+- moat: 堀
+- vegetation: 植物
+- sturdy: 屈強な
+- streambed: 川床
+- conave: 凹状の
+- dissipate: 逃す
+- abandon: 放棄する
+- bite: 噛む[n]
+- mammal: 哺乳動物
+- reinforce: 強化する
+- span: またがる[v]
+- channel: 水路、川床
+- fiercely: 猛烈に
+- territorial: 地域的な
+- bond: 結束する
+- juveniles: 青少年の
+- disperse: 分散する
+- descendant: 子孫
+- replenish: 補給する
+
+# [1/12](https://www.youtube.com/watch?v=yxsoE3jO8HM)
+
+- fumbling->fumble: いじくる
+- devastatingly: 非常に(魅力的な)
+- adorable: とても可愛らしい
+- mortal: この世の, 退屈な
+- fur: 毛皮
+- urge: 衝動[n]
+- smush: 粉砕する
+- appalled: ゾッとする
+- peculiar: 奇妙な
+- nurture: 養育する
+- acutely: 激しく
+- domesticate: 飼い慣らす、家畜化する
+- juvenile: [再]青少年の
+- docile: 従順な
+- embryonic: 胎芽の
+- crest: 絶頂
+- pituitary: 脳下垂体
+- adrenal: 副腎
+- gland: 甲状腺
+- bred->breed: 繁殖する
+- brow: 額
+- ridge: 分水嶺
+- elicit: 誘い出す
+- discordant: 調和しない
+- frivolous: 軽率な
+- immense: 強大な
+- consequential: 重大な, 結果的に
