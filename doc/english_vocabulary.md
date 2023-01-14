@@ -76,3 +76,54 @@
 - frivolous: 軽率な
 - immense: 強大な
 - consequential: 重大な, 結果的に
+
+# [1/14](https://www.youtube.com/watch?v=xqaX2yi0VF8)
+
+- cockroach: ゴキブリ
+- jewel wasp: 宝石バチ
+- latch onto: しっかりと捕まえる
+- arc: 弧を描く
+- cluster: 集団
+- nerves: 神経
+- thorax: 胸部
+- venom: 毒
+- surge: こみあげる, 急上昇する
+- paralyze: 麻痺させる
+- sting: 刺す
+- in half: ２当分に
+- hemolymph: 血リンパ（節足動物に特有)
+- subterranean: 地中の
+- lair: 住処
+- burrow: 巣穴
+- offspring: 子供
+- nursery: 託児所
+- crypt: 納骨室
+- hatch: 孵化する
+- bore: 穴を開ける
+- pupate: 蛹になる
+- carcass: 死骸, 残骸
+- iridescent: 玉虫色の
+- gruesome: ゾッとする
+- parasitoidism: 捕食寄生(宿者が宿主を殺してしまう寄生のこと)
+- evolutionary: 進化論的な
+- ladybug: 瓢虫(天道虫)
+- corpse: 死体
+- fierce: 獰猛な
+- gall: 厚かましい
+- gall wasp: タマバチ
+- tuck away(same as tuck in): ガツガツ食べる
+- chamber: 空間
+- crawl out of: ~から突然現れる
+- caterpillar: 芋虫
+- owlet: フクロウの子
+- moth: 蛾
+- flutter: 羽ばたきする
+- polyembryony: 多胚化(一つの受精卵が分裂を繰り返し複数の胚が形成される現象)
+- spawn: 引き起こす
+- castes: 階級
+- reproductive: 複製の
+- parasitoid: 宿者
+- morth: 変態する(→モーフィング)
+- prolific: 肥沃な
+- province: 地方
+- barklice: チャクタテムシ(寄生性のシラミ)
