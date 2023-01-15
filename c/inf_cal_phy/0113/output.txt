@@ -1,0 +1,2 @@
+clang -mmacosx-version-min=13 main.c -o a.out
+./a.out
