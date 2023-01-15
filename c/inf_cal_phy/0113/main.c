@@ -15,7 +15,7 @@ void simulator(int n_total) {
 			n1++;
 		}
 		if (i % OUT == 0) {
-			// printf("%f\n", (double)n1 / n_total);
+			printf("%f\n", (double)n1 / n_total);
 		}
 	}
 }
@@ -23,8 +23,5 @@ void simulator(int n_total) {
 int main() {
 	// 8-2
 	srand(time(NULL));
-	simulator(1e3);
-	/*simulator(1e5);
 	simulator(1e6);
-	*/
 }
