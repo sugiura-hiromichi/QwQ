@@ -188,6 +188,11 @@ fn main() {
 		0..=3 => assert!(false),
 		_ => assert!(true),
 	}
+
+	///===============================================================
+	// scientfic notation in rust
+	let sn = 1e5 as i32;
+	assert!(sn == 100000);
 }
 
 struct HasPrivate {

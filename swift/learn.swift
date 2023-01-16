@@ -411,9 +411,7 @@ assert(is_liquid == false)
 
 func make_ary<Item>(repeating item: Item, times: Int) -> [Item] {
 	var rslt: [Item] = []
-	for _ in 0 ..< times {
-		rslt.append(item)
-	}
+	for _ in 0 ..< times { rslt.append(item) }
 	return rslt
 }
 

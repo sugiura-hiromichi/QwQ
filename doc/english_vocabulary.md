@@ -127,3 +127,21 @@
 - prolific: 肥沃な
 - province: 地方
 - barklice: チャクタテムシ(寄生性のシラミ)
+
+# [1/16](https://www.youtube.com/watch?v=q-ApAdEOm5s)
+
+- awful: 不愉快な
+- evasive: 曖昧な、責任逃れの
+- excuses: 弁明、言い訳
+- flimsy: 薄っぺらい
+- corporate: 企業の
+- amend: 修正する
+- vulnerable: 脆弱な
+- absolve: 免除する
+- You feel that(this) way: 君を傷つけるつもりはなかった
+- count: 重要である[v]
+- tangible: 有形の
+- transgression: 違反、犯罪
+- remorse: 良心の呵責
+- accountability: 説明責任
+- reconciliation: 和解
