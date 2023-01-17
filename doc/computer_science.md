@@ -39,3 +39,4 @@ _brush_
 
 In Normal mode, typing `v` enter visual mode. Then type `iw` selects word the cursor is currently on. Other example, typing `vi"` selects inner " .. ".
 [link](/doc/journal/METAS.md#progress-visualize)
+[link](doc/tmp.rs#header)

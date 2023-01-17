@@ -145,3 +145,25 @@
 - remorse: 良心の呵責
 - accountability: 説明責任
 - reconciliation: 和解
+
+# [1/17](https://www.youtube.com/watch?v=f_OPjYQovAE)
+
+- wrench: ねじる
+- spark: 火種
+- infatuation: 心酔
+- intoxicate: 酔わせる
+- ventral tegmental area: 腹側被蓋野
+- quench: (乾きを)癒す
+- abuse: 乱用
+- anticipation: 予想
+- euphoric: 幸福に満ちた
+- haze: もや
+- infatuate: 夢中になる
+- compassionate: 情け深い
+- inhibit: 抑制する
+- tint: 脚色
+- accompany: 同行する
+- whirlwind: 旋風
+- axis: 軸
+- agonize: 苦闘する
+- devastate: 打ちのめされる
