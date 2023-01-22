@@ -1,3 +1,4 @@
+#!swift
 // # A Swift Tour
 
 // ## d: Simple Values
@@ -383,7 +384,7 @@ do {
 } catch HumanError.doze {
 	print("here we stay...")
 } catch let he as HumanError {
-	print("oops! \(he)")
+	print("from 387 line| oops! \(he)")
 } catch {
 	print(error)
 }
