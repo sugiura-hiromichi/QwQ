@@ -1,3 +1,4 @@
 -- INFO: This file is `test.lua`
 assert(true)
-assert(false, 'This file is test.lua')
+local table = { 6, 7, 8 }
+assert(table[1] == 6)

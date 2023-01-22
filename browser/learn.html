@@ -3,6 +3,21 @@
 	<head>
 		<title>page title</title>
 		<link rel="stylesheet" href="style.css" />
+		<style>
+			/*this is class. class can be use any time*/
+			.city {
+				background-color: indigo;
+				color: lawngreen;
+				border: 1px solid aqua;
+				margin: 10px;
+				padding: 10px;
+			}
+			/*this is id. id is used only once*/
+			#uniq {
+				color: sienna;
+				background-color: beige;
+			}
+		</style>
 	</head>
 	<body style="color: green; background-color: whitesmoke">
 		<h1 style="color: blue" title="head">first heading</h1>
@@ -106,7 +121,7 @@
 			<li>two</li>
 			<li>three</li>
 		</ul>
-		<ol style="color: maroon">
+		<ol style="color: maroon" type="i" start="20">
 			<li>one</li>
 			<li>two</li>
 			<li>three</li>
@@ -116,5 +131,115 @@
 			<dd>-again</dd>
 			<dt>I:</dt>
 			<dd>-return</dd>
+		</dl>
+		<ul>
+			<li>unnested list</li>
+			<li>
+				nested parent
+				<ul>
+					<li>nested child</li>
+				</ul>
+			</li>
+		</ul>
+		<h1>html block and element</h1>
+		<p>paragraph is block-level element</p>
+		<div>
+			div element which defines division or a section is block-level element.
+			<span style="background-color: orangered">
+				this is span element. span is inline element
+			</span>
+		</div>
+		<h1>html class</h1>
+		<div class="city">
+			<h2>this is city</h2>
+			<p>i can not</p>
+		</div>
+		<div class="city">
+			<h2>these are city</h2>
+			<p>we can</p>
+		</div>
+		<h1>html id</h1>
+		<p id="uniq">uniq id here.</p>
+		<a href="#uniq">id is also use as bookmark</a>
+		<h1>html iframe</h1>
+		<iframe
+			src="index.html"
+			title="india"
+			name="here_iframe"
+			height="400"
+			style="border: none"></iframe>
+		<iframe
+			src="https://github.com/sugiura-hiromichi/sugiura-hiromichi"
+			height="600"
+			width="500"
+			title="desc"></iframe>
+		<h1>html Layout Elements and techniques</h1>
+		<p>html layout is done by CSS</p>
+		<h1>html computercode</h1>
+		<p>
+			kbd element defines <kbd>keyboard input</kbd> samp element is used to define sample output
+			from a computer program <samp>like this</samp><br />
+			html code element is like markdown codeblock.
+			<code> fn main(){ println!("hell on world"); } </code>
+		</p>
+		<section>
+			<h1>html semantics</h1>
+			<p>
+				section element defines a section in a document. according to documentation, 'a section
+				i a thematic grouping of content, typically with a heading'
+			</p>
+		</section>
+		<article>
+			<p>
+				article element specifies independent, self-contained content. examples of where article
+				element can be used
+			</p>
+			<ul>
+				<li>forum posts</li>
+				<li>blog posts</li>
+				<li>user comments</li>
+				<li>product cards</li>
+				<li>newspaper articles</li>
+			</ul>
+		</article>
+		<header>
+			<h2>header elements</h2>
+			<p>represents a container for introductory content or a set of navigational links</p>
+		</header>
+		<footer>
+			<p>footer element defines a footer for a document or section.</p>
+		</footer>
+		<aside>
+			<p>
+				aside element defines some content aside from the content aside from the content it is
+				placed in (requires CSS)
+			</p>
+		</aside>
+		<h1>html style guide</h1>
+		<ol>
+			<li>always declare document type</li>
+			<li>use lowercase element names</li>
+			<li>close all html elements</li>
+			<li>use lowercase attribute names</li>
+			<li>always quote attribute values</li>
+			<li>always specify alt, width, and height for images</li>
+			<li>spaces and equal signs</li>
+			<li>avoid long code lines</li>
+			<li>blank lines and indentation</li>
+			<li>never skip the title element</li>
+			<li>never omit html, body and head element</li>
+			<li>meta data should be defined as early as possible</li>
+			<li>settingg the viewport</li>
+		</ol>
+		<h1>html Uniform Resource Locator(URL)</h1>
+		<p>url follows these syntax rules<br />scheme://prefix.domain:port/path/filename</p>
+		<ul>
+			<li>scheme - defines the type of internet service(commonly http or https)</li>
+			<li>prefix - defines a domain prefix(default for http is www)</li>
+			<li>domain - defines the internet domain name(like github.com)</li>
+			<li>port - defines the port number at the host(default for http is 80)</li>
+			<li>path - defines a path at the server(if omitted, the root directory of the site)</li>
+			<li>filename - defines the name of a document or resource</li>
+		</ul>
 	</body>
 </html>

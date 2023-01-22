@@ -167,3 +167,54 @@
 - axis: 軸
 - agonize: 苦闘する
 - devastate: 打ちのめされる
+
+# [1/21](https://www.youtube.com/watch?v=BGxYMTftuzw)
+
+- overheard->overhear: 偶然耳にする
+- mandatory: 義務的な
+- disparse: 分散させる
+- encase: ~に包む
+- chairman: 議長
+- contemplate: 熟考する
+- formaldehyde: ホルムアルデヒド
+- commission: 作成を依頼する[v]
+- initiate: 開始する
+- ritual: 儀式
+- peel: (皮を)剝く
+- broth: スープ
+- ingredient: 要素
+- concoct: でっち上げる
+- fable: 寓話
+- generously: 寛大にも
+- longevity: 寿命、長寿
+- frivolous: つまらない、くだらない
+- enact: 制定する
+- enlist: 協力を求める
+- eradicate: 根絶する
+- militant: 攻撃的な
+- ransack: くまなく探す
+- dynastic: 王朝の
+- raid: 捜索、襲撃
+- pile: ~の山
+- manipulate: 操作する
+- denounce: けなす
+- torture: 拷問
+- recant: 撤回する
+- gesture: 言動、意思表示
+- taint: 腐る
+- ideology: 空論、イデオロギー
+- board: 搭乗する
+- malign: 中傷する
+
+#[1/22](https://www.youtube.com/watch?v=AESkozhaT4s)
+
+- maturity: 成熟
+- eligible: 資格がある
+- arbitrary: 恣意的
+- obsess: ~のことばかり考えている
+- consensus: 合意
+- trajectory: 道筋
+- reduction: 減少
+- pruning->prune: 選定
+- myelinated: 有髄
+- insulation: 絶縁体
