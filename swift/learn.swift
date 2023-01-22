@@ -384,7 +384,7 @@ do {
 } catch HumanError.doze {
 	print("here we stay...")
 } catch let he as HumanError {
-	print("from 387 line| oops! \(he)")
+	print("oops! \(he)")
 } catch {
 	print(error)
 }
