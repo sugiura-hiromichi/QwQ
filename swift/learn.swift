@@ -1,3 +1,4 @@
+#!swift
 // # A Swift Tour
 
 // ## d: Simple Values
