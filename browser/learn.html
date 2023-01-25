@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html style="background-color: darkgray" lang="en">
+	<head>
+		<title>page title</title>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			/*this is class. class can be use any time*/
+			.city {
+				background-color: indigo;
+				color: lawngreen;
+				border: 1px solid aqua;
+				margin: 10px;
+				padding: 10px;
+			}
+			/*this is id. id is used only once*/
+			#uniq {
+				color: sienna;
+				background-color: beige;
+			}
+		</style>
+	</head>
+	<body style="color: green; background-color: whitesmoke">
+		<h1 style="color: blue" title="head">first heading</h1>
+		<p>first paragraph<br />with line break</p>
+		<a
+			href="https://github.com/sugiura-hiromichi/QwQ"
+			target="_blank"
+			title="this is tooltip for link">
+			<img src="img/myicon.jpeg" alt="myicon"
+		/></a>
+		<a href="https://github.com/sugiura-hiromichi/QwQ">this is a link</a>
+		<p title="this is a tooltip" style="color: blueviolet">this is blueviolet color</p>
+		<p title="hell" on world>this paragraph's tooltip is displayed incorrectly</p>
+		<hr />
+		<h2>second head</h2>
+		<p style="font-size: 60px">this paragraph's font size is 60px</p>
+		<p>
+			browser automatically add some white space(a margin) before and after a paragraph after pre
+			tag
+		</p>
+		<pre>
+ pre element
+	is displayed
+	as preformatted text pre element can be in paragraph or itself as a paragraph
+		</pre
+		>
+		<pre style="font-family: Menlo; font-size: 200%"> this font is Menlo with 200% sized </pre>
+		<h1 style="text-align: center">centered head</h1>
+		<p style="text-align: right">right aligned</p>
+		<h1>html Formatting Elements</h1>
+		<p>
+			<b>this text is bold.</b>
+			<strong>the strong element is typically displayed in bold</strong>.<br />
+			<i>this text is italic</i>.
+			<em>
+				the em element is typically displayed in italic. screen reader will pronounce the words
+				in em with an emphasis, using verbal stress.</em
+			><br />
+			<small>small element defines smaller text. </small><br />
+			<mark> mark element defines text that should be marked or highlighted. </mark><br />
+			<del>del element displayed in strikeholded. </del>
+			<ins>ins element displayed in underline. </ins>
+			<sub>sub element displayed half a character below</sub>
+			<sup>sup element displayed half a character above</sup>
+		</p>
+		<h1>html Quotation</h1>
+		<p>here is blockquotation</p>
+		<blockquote cite="https://github.com/sugiura-hiromichi/sugiura-hiromichi">
+			solo player
+		</blockquote>
+		<p>
+			q tag defines a short quotation <q>solo player</q>. the
+			<abbr title="abbreviation">abbr</abbr> tag defines abbreviation or an acronym. Marking
+			abbreviations can give useful information to search engine, browser, translation system.
+		</p>
+		<address>
+			writer: me<br />
+			site: https://github.com/sugiura-hiromichi<br />
+			written in 2023-01-21
+		</address>
+		<p>
+			cite tag defines <cite>this article</cite> title of a work.
+			<bdo dir="rtl">bdo stands for bi-directinal override</bdo>
+		</p>
+		<h1>html Comment</h1>
+		<p>
+			<!--comment can be inlined-->
+			here is inline comment
+		</p>
+		<h1>html Color</h1>
+		<p style="color: orange; background-color: mediumseagreen">
+			html supports 140 standard color names
+		</p>
+		<h2 style="border: 2px solid tomato">border color</h2>
+		<h1>html link</h1>
+		<a href="img/myicon.jpeg" target="_blank">link txt</a>
+		<h1>html Images</h1>
+		<img src="img/myicon.jpeg" width="10%" title="`src` attribute can be url" />
+		<p>float attribute of css places img element to the left or right of text</p>
+		<h1>html Table</h1>
+		<table>
+			<caption style="color: black">
+				this is a caption element
+			</caption>
+			<tr>
+				<td style="widtd: 70%">nodata</td>
+				<th>another</th>
+				<th>additional</th>
+			</tr>
+			<tr style="height: 50px">
+				<th colspan="2" rowspan="2">niconico</th>
+				<td>youtube</td>
+			</tr>
+			<tr>
+				<td>www</td>
+			</tr>
+		</table>
+		<h1>html List</h1>
+		<ul style="color: royalblue">
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+		</ul>
+		<ol style="color: maroon" type="i" start="20">
+			<li>one</li>
+			<li>two</li>
+			<li>three</li>
+		</ol>
+		<dl>
+			<dt>once:</dt>
+			<dd>-again</dd>
+			<dt>I:</dt>
+			<dd>-return</dd>
+		</dl>
+		<ul>
+			<li>unnested list</li>
+			<li>
+				nested parent
+				<ul>
+					<li>nested child</li>
+				</ul>
+			</li>
+		</ul>
+		<h1>html block and element</h1>
+		<p>paragraph is block-level element</p>
+		<div>
+			div element which defines division or a section is block-level element.
+			<span style="background-color: orangered">
+				this is span element. span is inline element
+			</span>
+		</div>
+		<h1>html class</h1>
+		<div class="city">
+			<h2>this is city</h2>
+			<p>i can not</p>
+		</div>
+		<div class="city">
+			<h2>these are city</h2>
+			<p>we can</p>
+		</div>
+		<h1>html id</h1>
+		<p id="uniq">uniq id here.</p>
+		<a href="#uniq">id is also use as bookmark</a>
+		<h1>html iframe</h1>
+		<iframe
+			src="index.html"
+			title="india"
+			name="here_iframe"
+			height="400"
+			style="border: none"></iframe>
+		<iframe
+			src="https://github.com/sugiura-hiromichi/sugiura-hiromichi"
+			height="600"
+			width="500"
+			title="desc"></iframe>
+		<h1>html Layout Elements and techniques</h1>
+		<p>html layout is done by CSS</p>
+		<h1>html computercode</h1>
+		<p>
+			kbd element defines <kbd>keyboard input</kbd> samp element is used to define sample output
+			from a computer program <samp>like this</samp><br />
+			html code element is like markdown codeblock.
+			<code> fn main(){ println!("hell on world"); } </code>
+		</p>
+		<section>
+			<h1>html semantics</h1>
+			<p>
+				section element defines a section in a document. according to documentation, 'a section
+				i a thematic grouping of content, typically with a heading'
+			</p>
+		</section>
+		<article>
+			<p>
+				article element specifies independent, self-contained content. examples of where article
+				element can be used
+			</p>
+			<ul>
+				<li>forum posts</li>
+				<li>blog posts</li>
+				<li>user comments</li>
+				<li>product cards</li>
+				<li>newspaper articles</li>
+			</ul>
+		</article>
+		<header>
+			<h2>header elements</h2>
+			<p>represents a container for introductory content or a set of navigational links</p>
+		</header>
+		<footer>
+			<p>footer element defines a footer for a document or section.</p>
+		</footer>
+		<aside>
+			<p>
+				aside element defines some content aside from the content aside from the content it is
+				placed in (requires CSS)
+			</p>
+		</aside>
+		<h1>html style guide</h1>
+		<ol>
+			<li>always declare document type</li>
+			<li>use lowercase element names</li>
+			<li>close all html elements</li>
+			<li>use lowercase attribute names</li>
+			<li>always quote attribute values</li>
+			<li>always specify alt, width, and height for images</li>
+			<li>spaces and equal signs</li>
+			<li>avoid long code lines</li>
+			<li>blank lines and indentation</li>
+			<li>never skip the title element</li>
+			<li>never omit html, body and head element</li>
+			<li>meta data should be defined as early as possible</li>
+			<li>settingg the viewport</li>
+		</ol>
+		<h1>html Uniform Resource Locator(URL)</h1>
+		<p>url follows these syntax rules<br />scheme://prefix.domain:port/path/filename</p>
+		<ul>
+			<li>scheme - defines the type of internet service(commonly http or https)</li>
+			<li>prefix - defines a domain prefix(default for http is www)</li>
+			<li>domain - defines the internet domain name(like github.com)</li>
+			<li>port - defines the port number at the host(default for http is 80)</li>
+			<li>path - defines a path at the server(if omitted, the root directory of the site)</li>
+			<li>filename - defines the name of a document or resource</li>
+		</ul>
+	</body>
+</html>

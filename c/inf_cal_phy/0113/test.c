@@ -6,4 +6,7 @@
 
 void t1() { assert(SCIENTIFIC_NOTATION == 100000); }
 
-int main() { t1(); }
+int main() {
+	t1();
+	printf("\n\t|> all test have passed\n");
+}

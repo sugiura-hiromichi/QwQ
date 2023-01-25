@@ -1,8 +1,21 @@
+<!--toc:start-->
+
+- [Rust](#rust)
+  - [`pub(path)` conjection](#pubpath-conjection)
+  - [p formatting](#p-formatting)
+- [Vim](#vim)
+  - [Mode as a Motion](#mode-as-a-motion)
+
+<!--toc:end-->
+
 # Rust
 
 ## `pub(path)` conjection
 
-> see [official reference](https://doc.rust-lang.org/reference/visibility-and-privacy.htmlpubin-path-pubcrate-pubsuper-and-pubself), [related error](https://doc.rust-lang.org/error-index.html#E0704), [my playground example](https://github.com/ah-y/playground/blob/master/rust/elseeee/src/main.rs)
+> see
+> [official reference](https://doc.rust-lang.org/reference/visibility-and-privacy.htmlpubin-path-pubcrate-pubsuper-and-pubself)
+> [related error](https://doc.rust-lang.org/error-index.html#E0704)
+> [my playground example](https://github.com/ah-y/playground/blob/master/rust/elseeee/src/main.rs)
 
 Since 2018 Edition, `path` for `pub(path)` must start with crate, super.
 
@@ -19,10 +32,23 @@ let address = format!("{x:p}"); // this produces something like '0x7f06092ac6d0'
 
 ---
 
+````lua
+local a = 0
+assert(a == 0)
+local function return_0(b)
+	return b
+end
+
+assert(return_0(a) == 0, 'assertion failed')
+```
+
 # Vim
+
+*brush*
 
 ## Mode as a Motion
 
-In Normal mode, typing `v` enter visual mode.
-Then type `iw` selects word the cursor is currently on.
-Other example, typing `vi"` selects inner " .. ".
+In Normal mode, typing `v` enter visual mode. Then type `iw` selects word the cursor is currently
+on. Other example, typing `vi"` selects inner " .. ".
+[link](/doc/journal/METAS.md#progress-visualize) [link](/tmp.rs#header)
+````

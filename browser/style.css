@@ -1,0 +1,35 @@
+body {
+	tab-size: 3;
+	/*background-image: url(img/myicon.jpeg);*/
+	background-size: cover;
+	background-color: navy;
+}
+blockquote {
+	color: chocolate;
+	border: 2px groove tomato;
+}
+p {
+	background-color: transparent;
+	color: teal;
+}
+img {
+	float: left;
+	width: 10%;
+}
+table,
+th,
+td {
+	border: 1px dashed blue;
+	border-color: aquamarine;
+	border-collapse: collapse;
+}
+tr:nth-child(even) {
+	background-color: yellowgreen;
+}
+tr:hover {
+	background-color: gainsboro;
+}
+h1 {
+	background-color: antiquewhite;
+	border: none;
+}
