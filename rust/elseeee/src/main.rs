@@ -59,7 +59,6 @@ fn main() {
 	assert!(ret1.type_id() != retn.type_id());
 
 	///=============================================================
-
 	//rust's trait has alot advanced features:D
 	trait MyName {
 		fn is(&self,) -> &str;
@@ -155,17 +154,19 @@ fn main() {
 
 	///===============================================================
 	//let else syntax is available on rust 1.65.0
-	let some = Some("a",);
+	|| {
+		let some = Some("a",);
 
-	let Some(a)=some else{
+		let Some(a)=some else{
       assert_eq!(some,Some("a"));
         return;
     };
 
-	let Some(b): Option<&str>=None else{
+		let Some(b): Option<&str>=None else{
       assert_eq!(a,"a");
       return;
     };
+	};
 
 	///===============================================================
 	//break from labeled blocks is available from rust 1.65.0
@@ -214,6 +215,22 @@ fn main() {
 	///===============================================================
 	// unicode sequence
 	println!("\u{24}");
+
+	///===============================================================
+	// unicode sequence
+	fn return_fn(n: i32,) -> impl FnMut() -> i32 {
+		let mut rslt = 0;
+		move || {
+			rslt += n;
+			rslt
+		}
+	}
+
+	let mut inc_by_10 = return_fn(10,);
+	inc_by_10();
+	inc_by_10();
+	inc_by_10();
+	assert_eq!(inc_by_10(), 40);
 } // d: end of main
 
 struct HasPrivate {
