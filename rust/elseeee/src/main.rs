@@ -214,7 +214,8 @@ fn main() {
 
 	///===============================================================
 	// unicode sequence
-	println!("\u{24}");
+	let dollar = "\u{24}";
+	assert_eq!(dollar, "$");
 
 	///===============================================================
 	// unicode sequence
@@ -226,11 +227,21 @@ fn main() {
 		}
 	}
 
+	///===============================================================
+	// closure's capture
 	let mut inc_by_10 = return_fn(10,);
 	inc_by_10();
 	inc_by_10();
 	inc_by_10();
-	assert_eq!(inc_by_10(), 40);
+	assert_eq!(inc_by_10(), 40); // seems static value
+
+	let mut inc_by_6 = return_fn(6,);
+	inc_by_6();
+	inc_by_6();
+	inc_by_6();
+	assert_eq!(inc_by_6(), 24);
+
+	println!("\n |>reached end of main. All examples are executed!");
 } // d: end of main
 
 struct HasPrivate {
