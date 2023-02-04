@@ -94,7 +94,6 @@ fn main() {
 	}
 
 	///===============================================================
-
 	//Rust's pattern matching arm & @ binding
 	fn odd(i: i32,) -> bool {
 		if i % 2 == 0 {
@@ -193,7 +192,29 @@ fn main() {
 	// scientfic notation in rust
 	let sn = 1e5 as i32;
 	assert!(sn == 100000);
-}
+
+	///===============================================================
+	// `from(bool)` for numeric type
+	fn usize_from() {
+		assert_eq!(usize::from(true), 1);
+		assert_eq!(usize::from(false), 0);
+	}
+	usize_from();
+
+	///===============================================================
+	// &str comparison
+	assert!("0" < "1");
+
+	///===============================================================
+	// unary minus
+	let a = 10;
+	let b = -a;
+	assert!(b == -10);
+
+	///===============================================================
+	// unicode sequence
+	println!("\u{24}");
+} // d: end of main
 
 struct HasPrivate {
 	pub pub_member: usize,

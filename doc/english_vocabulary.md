@@ -235,3 +235,27 @@
 - misinterpret 誤解する
 - acceptance 承認
 - nudge 小突く
+
+#[1/29](https://www.youtube.com/watch?v=2-VTLiy0Lls)
+
+- What are your odds of ~する確率はどれほどか?
+- fabled 寓話
+- wand 指揮棒　杖
+- immune 免疫がある
+- irreversibly 後戻りできない
+- friggin 非常に
+
+#[2/2](https://www.youtube.com/watch?v=H7i9Anh0_Dg)
+
+- pathogen 病原体
+- lethal 死を引き起こす
+- thwart 妨げる
+- sterile 子供が出来ない
+- sperm 精子
+- chromosome 染色体
+- insecticide 殺虫剤
+- interbreed 異種交配する
+- feces 排泄物
+- insectivores 食虫動物
+- gauge 測定する、判断する
+- countermeasure 対抗手段
