@@ -218,7 +218,7 @@ fn main() {
 	assert_eq!(dollar, "$");
 
 	///===============================================================
-	// unicode sequence
+	// closure's capture
 	fn return_fn(n: i32,) -> impl FnMut() -> i32 {
 		let mut rslt = 0;
 		move || {
@@ -227,8 +227,6 @@ fn main() {
 		}
 	}
 
-	///===============================================================
-	// closure's capture
 	let mut inc_by_10 = return_fn(10,);
 	inc_by_10();
 	inc_by_10();
