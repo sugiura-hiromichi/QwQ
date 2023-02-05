@@ -19,8 +19,7 @@ fn main() {
 	///=============================================================
 	//formatting modifier
 	let printout = "printout";
-	println!("printout: {printout}");
-	println!("printout:?: {printout:?}");
+	assert_eq!(format!("{printout:?}"), "\"printout\"");
 
 	///This returns closure
 	fn return_closure() -> impl Fn() -> i32 {
@@ -232,12 +231,17 @@ fn main() {
 	inc_by_10();
 	inc_by_10();
 	assert_eq!(inc_by_10(), 40); // seems static value
-
 	let mut inc_by_6 = return_fn(6,);
 	inc_by_6();
 	inc_by_6();
 	inc_by_6();
 	assert_eq!(inc_by_6(), 24);
+
+	///===============================================================
+	// closure is reference
+	let mut also_inc_10 = &mut inc_by_10; // if `&mut` removed, then `inc_by_10` is moved
+	assert_eq!(also_inc_10(), 50);
+	assert_eq!(inc_by_10(), 60);
 
 	println!("\n |>reached end of main. All examples are executed!");
 } // d: end of main
