@@ -259,3 +259,19 @@
 - insectivores 食虫動物
 - gauge 測定する、判断する
 - countermeasure 対抗手段
+
+#[2/5](https://www.youtube.com/watch?v=lq8TNKZVEWs)
+
+- whims 思い付き、出来心
+- enslavers 奴隷にする
+- slavery 奴隷であること
+- conspire 企む、共謀する
+- proclaim 宣言する
+- spiteful 悪意に満ちた
+- secede 分離する
+- confederacy 連盟
+- emancipation 解放
+- amendment 修正
+- ratify 批准する
+- bastion 砦
+- commemorate 記念する
