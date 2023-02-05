@@ -42,3 +42,48 @@ let inc_by_10 = inc(by: 10)
 _ = inc_by_10(); _ = inc_by_10(); _ = inc_by_10(); assert(inc_by_10() == 40)
 let inc_by_6 = inc(by: 6)
 _ = inc_by_6(); _ = inc_by_6(); _ = inc_by_6(); assert(inc_by_6() == 24)
+
+// closures are ref type (not value type)
+
+let also_inc_10 = inc_by_10; assert(also_inc_10() == 50); assert(inc_by_10() == 60)
+
+// escaping closure
+
+var cmp_handlers: [() -> String] = []
+func escaping_cl(_ cmp_handler: @escaping () -> String) {
+	cmp_handlers.append(cmp_handler)
+}
+
+escaping_cl { "hello from func in array" }; assert(cmp_handlers.count == 1)
+assert(cmp_handlers[0]() == "hello from func in array")
+
+// more escaping
+
+func someFunctionWithNonescapingClosure(closure: () -> Void) {
+	closure()
+}
+
+// MARK: - SomeClass
+class SomeClass {
+	var x = 10
+
+	func doSomething() {
+		escaping_cl { self.x = 100; return "doSomething" }
+		someFunctionWithNonescapingClosure { x = 200 }
+	}
+}
+
+let instance = SomeClass(); instance.doSomething(); assert(instance.x == 200)
+assert(cmp_handlers[1]() == "doSomething"); assert(instance.x == 100)
+
+// MARK: - SomeOtherClass
+class SomeOtherClass {
+	var x = 10
+
+	func doSomething() {
+		someFunctionWithEscapingClosure { [self] in x = 100 }
+		someFunctionWithNonescapingClosure { x = 200 }
+	}
+}
+
+print("|>reached eof")
