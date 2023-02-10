@@ -81,9 +81,28 @@ class SomeOtherClass {
 	var x = 10
 
 	func doSomething() {
-		someFunctionWithEscapingClosure { [self] in x = 100 }
+		escaping_cl { [self] in x = 100; return "do other thing" }
 		someFunctionWithNonescapingClosure { x = 200 }
 	}
 }
+
+// autoclosure
+
+var customers = ["chris", "leon", "eida", "ethan"]; assert(customers.count == 4)
+let custom_remove = { customers.remove(at: 0) }; assert(customers.count == 4)
+assert(custom_remove() == "chris"); assert(customers.count == 3)
+
+func serve(customer cstmr_prvdr: () -> String) {
+	assert(cstmr_prvdr().count == 4)
+}
+
+serve(customer: custom_remove)
+
+func other_serve(cstm: @autoclosure () -> String) {
+	assert(cstm().count == 4)
+}
+
+other_serve(cstm: custom_remove())
+other_serve(cstm: "lgbt")
 
 print("|>reached eof")

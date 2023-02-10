@@ -1,3 +1,3 @@
-# Typical Typable words
+# Typical typo
 
 leave there create public between increase people developped consider exceptions
