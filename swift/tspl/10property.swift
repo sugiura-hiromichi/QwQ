@@ -64,6 +64,6 @@ struct SmallRect {
 	@TwelveOrLess(wrappedValue: 7) var width: Int
 }
 
-var small_rect = SmallRect(); small_rect.height = 20; assert(small_rect.height == 12)
+var small_rect = SmallRect(); small_rect.height = 20; assert(small_rect.height == 1)
 
 print("🫠")

@@ -243,6 +243,13 @@ fn main() {
 	assert_eq!(also_inc_10(), 50);
 	assert_eq!(inc_by_10(), 60);
 
+	///===============================================================
+	// function in rust is 1st citizen object. that means functions can be stored in variable
+	fn fst_citizen() { assert!(true) }
+	let mut fn_p = fst_citizen;
+	fn fst_citizen2() { assert!(true) }
+	//fn_p = fst_citizen2; d: this cause error because each named function has unique type
+
 	println!("\n |>reached end of main. All examples are executed!");
 } // d: end of main
 
