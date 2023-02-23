@@ -12,111 +12,6 @@ enum SemTili {
 
 ///Documentation
 fn main() {
-	//Rust can define function in function, return closure intuitive way by using
-	// impl trait.
-	// TODO
-
-	///=============================================================
-	//formatting modifier
-	let printout = "printout";
-	assert_eq!(format!("{printout:?}"), "\"printout\"");
-
-	///This returns closure
-	fn return_closure() -> impl Fn() -> i32 {
-		fn fn_in_main() -> impl Fn(String,) -> String { |x| x }
-		|| fn_in_main()("7".to_string(),).parse::<i32>().unwrap()
-	}
-
-	assert_eq!(return_closure()(), 7);
-
-	//How rust identify closure itself and closure's return value in fn's argument
-	fn closure_ornot<GenT: 'static,>(_which: GenT,) -> &'static str {
-		//typeid of generic parameter's type
-		let gen_id = TypeId::of::<GenT,>();
-		if TypeId::of::<i32,>() == gen_id {
-			"GenT is i32"
-		} else if TypeId::of::<dyn Fn() -> i32,>() == gen_id {
-			"GenT is Fn()->i32"
-		} else {
-			"unexpected!!"
-		}
-	}
-
-	assert_eq!(closure_ornot(return_closure()(),), "GenT is i32");
-
-	//closure's type is different even arguments and return types are same this
-	// call's "anonymous type"
-	let cl1 = || 1;
-	let cl2 = || 2;
-	assert!(cl1.type_id() != cl2.type_id());
-
-	//fn's type is same if types of all arguments and return value are same
-	fn ret1() -> i32 { 1 }
-	fn ret2() -> i32 { 2 }
-	fn retn() -> i32 { 1 }
-	assert!(ret1.type_id() != ret2.type_id());
-	assert!(ret1.type_id() != retn.type_id());
-
-	///=============================================================
-	//rust's trait has alot advanced features:D
-	trait MyName {
-		fn is(&self,) -> &str;
-	}
-
-	impl<T,> MyName for Vec<T,> {
-		fn is(&self,) -> &str { "!Vec<T>!" }
-	}
-
-	impl MyName for i32 {
-		fn is(&self,) -> &str { "!int!" }
-	}
-
-	impl<T,> MyName for (i32, Vec<T,>,) {
-		fn is(&self,) -> &str { "!(i32, Vec<T>)!" }
-	}
-
-	let v = vec![0, 1, 1, 2, 23];
-	let ai = 0;
-	assert_eq!(v.is(), "!Vec<T>!");
-	assert_eq!(ai.is(), "!int!");
-	assert_eq!((ai, v,).is(), "!(i32, Vec<T>)!");
-
-	//methods (in this case, is()) are only able to use within defined crate.
-	// This guarantees safety
-
-	///==============================================================
-	//Option<T> supports iterator
-	let a = Some("a",);
-	for &i in a.iter() {
-		assert_eq!(i, "a");
-	}
-
-	///===============================================================
-	//Rust's pattern matching arm & @ binding
-	fn odd(i: i32,) -> bool {
-		if i % 2 == 0 {
-			true
-		} else {
-			false
-		}
-	}
-
-	let v = vec![8, 10, 33, 11, 666, 1];
-	v.iter().map(|&n| match n {
-		c @ (4..=8 | 33) => assert!(4 <= c && c <= 8 || c == 33),
-		c if odd(c,) => assert_eq!(c % 2, 0),
-		666 if false => println!("666"),
-		c @ (11 | 22) => assert!(c == 11 || c == 22),
-		_ => println!("I know that I know nothing"),
-	},);
-
-	///===============================================================
-	//Option::map uses raw-value if is Some().
-	//But how about self is None?
-	let mut some_none = None;
-	some_none.map(|_one| panic!("This painc shouldn't be executed"),);
-	some_none = Some(1,);
-	some_none.map(|one| assert_eq!(one, 1),);
 
 	///===============================================================
 	//Checking idea that returning private method's pointer enables to access
@@ -248,9 +143,14 @@ fn main() {
 	fn fst_citizen() { assert!(true) }
 	let mut fn_p = fst_citizen;
 	fn fst_citizen2() { assert!(true) }
-	//fn_p = fst_citizen2; d: this cause error because each named function has unique type
+	//fn_p = fst_citizen2; this cause error because each named function has unique type
 
-	println!("\n |>reached end of main. All examples are executed!");
+	///===============================================================
+	// format modifier for `double/float`. This `.3(or any natural number)` specificates numbers of
+	// digits after `.`
+	assert_eq!(format!("{:.4}", 10.0), "10.0000");
+
+	println!("\n |> 🫠🫠🫠🫠");
 } // d: end of main
 
 struct HasPrivate {
