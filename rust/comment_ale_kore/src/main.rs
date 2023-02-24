@@ -1,6 +1,6 @@
 //! This is DocComment for file itself
 //! ---
-//!  
+//!
 //! *italic*
 //!
 //! **bold**
