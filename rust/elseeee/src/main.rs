@@ -1,6 +1,5 @@
 #![allow(unused)]
 //!Documentation for crate
-use std::any::Any;
 use std::any::TypeId;
 use std::env::args;
 
@@ -10,9 +9,7 @@ enum SemTili {
 	TupleMem(u8,),
 }
 
-///Documentation
 fn main() {
-
 	///===============================================================
 	//Checking idea that returning private method's pointer enables to access
 	// private method Result is bad at rust-nightly 1.64.0
@@ -144,11 +141,6 @@ fn main() {
 	let mut fn_p = fst_citizen;
 	fn fst_citizen2() { assert!(true) }
 	//fn_p = fst_citizen2; this cause error because each named function has unique type
-
-	///===============================================================
-	// format modifier for `double/float`. This `.3(or any natural number)` specificates numbers of
-	// digits after `.`
-	assert_eq!(format!("{:.4}", 10.0), "10.0000");
 
 	println!("\n |> 🫠🫠🫠🫠");
 } // d: end of main
