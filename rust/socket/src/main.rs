@@ -41,10 +41,19 @@ fn hndl_cnct(mut stream: TcpStream,) {
 }
 
 fn main() -> anyhow::Result<(),> {
-	let _listener = TcpListener::bind("127.0.0.1:80",)?;
+	let listener = TcpListener::bind("127.0.0.1:80",)?;
 	let sock = UdpSocket::bind("127.0.0.1:80",)?;
-	send_msg(sock, "hello from Rust \u{e7a8}".to_string(),)?;
-	//for stream in listener.incoming() { hndl_cnct(stream?,); }
+	let listen = true;
+	let cnct = false;
+	if listen == true {
+		recv_msg(sock,);
+	} else if cnct == true {
+		for stream in listener.incoming() {
+			hndl_cnct(stream?,);
+		}
+	} else {
+		send_msg(sock, "hello from Rust \u{e7a8}".to_string(),)?;
+	}
 
 	Ok((),)
 }
