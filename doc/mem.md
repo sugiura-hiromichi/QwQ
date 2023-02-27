@@ -1,4 +1,4 @@
-isn't that bananas?: [訳] そんなバナナ（マジ）
+iBOWQ-9QV3-R6RD-66HBsn't that bananas?: [訳] そんなバナナ（マジ）
 
 # 入寮案内を読んだ感想
 

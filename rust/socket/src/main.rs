@@ -16,16 +16,14 @@ fn send_msg(sock: UdpSocket, msg: String,) -> anyhow::Result<(),> {
 	Ok((),)
 }
 
-fn recv_msg(sock: UdpSocket,) -> Vec<[u8; 1024],> {
-	let mut rslt = vec![];
+fn recv_msg(sock: UdpSocket,) {
 	let mut buf = [0; 1024];
 	while let Ok(i,) = sock.recv(&mut buf,) {
 		if i == 0 {
 			break;
 		}
-		rslt.push(buf,);
+		println!("|> {}", std::str::from_utf8(&buf[..i]).unwrap());
 	}
-	rslt
 }
 
 fn hndl_cnct(mut stream: TcpStream,) {
