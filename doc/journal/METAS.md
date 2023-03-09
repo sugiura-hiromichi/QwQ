@@ -3,14 +3,14 @@
 1. MetaData includes health plans
 
 2. Set Calender of that week based on WEEKLYLOG.md
-	- Plans should be manageable
+   - Plans should be manageable
 
 3. WEEKLYLOGs are referencing MONTHLYLOG
-	- Plans should be a little challenging one
+   - Plans should be a little challenging one
 
 4. Category classifying must explicitly written in *LOGs.md
-	- Category is just a example. Don't be so serious!
-	- Category priority is important to make actual progress. Make it visible.
+   - Category is just a example. Don't be so serious!
+   - Category priority is important to make actual progress. Make it visible.
 
 # MetaData
 
@@ -29,16 +29,13 @@
 
 ### Social Require
 
-
 ### Progress Visualize
 
 - adjust mapping of lspsaga & telescope
 - use at least one crate of `rust`
-
 
 ### Odd-jobs
 
 - Modify Calender's notification settings
 - ignore holiday alert
 - notify end of event
-
