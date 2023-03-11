@@ -3,6 +3,7 @@ use pyo3::types::IntoPyDict;
 use pyo3::PyResult;
 use pyo3::Python;
 
+/// doc
 fn main() -> PyResult<(),> {
 	Python::with_gil(|py| {
 		let np = py.import("numpy",)?;
@@ -14,9 +15,9 @@ fn main() -> PyResult<(),> {
 
 		let readonly = pyarray.readonly();
 		let slice = readonly.as_slice()?;
-		println!("{:?}", slice,);
 		assert_eq!(slice, &[1, 2, 3]);
 
+		println!("🫠");
 		Ok((),)
 	},)
 }
