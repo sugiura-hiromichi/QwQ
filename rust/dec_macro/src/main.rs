@@ -76,10 +76,29 @@ macro_rules! arrow {
 	};
 }
 
+macro_rules! op {
+	(add $a:expr, $b:expr) => {
+		$a + $b
+	};
+	(sub $a:expr, $b:expr) => {
+		$a - $b
+	};
+	(mul $a:expr, $b:expr) => {
+		$a * $b
+	};
+	(div $a:expr, $b:expr) => {
+		$a / $b
+	};
+}
+
 fn main() {
 	assert_eq!(matcher!(), "here is nothing");
 	assert_eq!(matcher!(@), "here is at");
 	assert_eq!(arrow!(->), "left arrow");
 	assert_eq!(arrow!(<-), "right arrow");
+	assert_eq!(op!(add 1, 2), 3);
+	assert_eq!(op!(sub 1, 2), -1);
+	assert_eq!(op!(mul 1, 2), 2);
+	assert_eq!(op!(div 1, 2), 0);
 	println!("🫠");
 }
