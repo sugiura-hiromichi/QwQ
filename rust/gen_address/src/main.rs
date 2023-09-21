@@ -1,3 +1,4 @@
+//use mylibrary_::sh_cmd;
 use std::fs;
 
 /*
@@ -54,4 +55,5 @@ fn main() {
 		fs::write(format!("mail_list/{l}.txt"), tmp,)
 			.expect(&format!("🫠Unable to write to `{l}.txt`"),);
 	},);
+	//	sh_cmd!("python3", ["./vaild_mail.py"]).expect("🫠Failed to run python script",);
 }
