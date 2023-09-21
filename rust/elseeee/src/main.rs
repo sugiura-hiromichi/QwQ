@@ -48,15 +48,15 @@ fn main() {
 	|| {
 		let some = Some("a",);
 
-		let Some(a)=some else{
-      assert_eq!(some,Some("a"));
-        return;
-    };
+		let Some(a,) = some else {
+			assert_eq!(some, Some("a"));
+			return;
+		};
 
-		let Some(b): Option<&str>=None else{
-      assert_eq!(a,"a");
-      return;
-    };
+		let Some(b,): Option<&str,> = None else {
+			assert_eq!(a, "a");
+			return;
+		};
 	};
 
 	///===============================================================

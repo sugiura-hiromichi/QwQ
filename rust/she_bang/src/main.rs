@@ -15,7 +15,7 @@ async fn main() -> Result<(), Box<dyn std::error::Error,>,> {
 	let mut f = std::fs::File::create(path,)?;
 	f.write_all(resp.as_bytes(),)?;
 
-	sugiura_hiromichi_mylibrary::sh_cmd!("open", [path]);
+	sugiura_hiromichi_mylibrary::sh_cmd!("open", [path])?;
 
 	//	let client = reqwest::Client::new();
 	//	let _ = client.post("http://httpbin.org/post",).body("this is sent🫠🫠🫠🫠",).send().await?;
