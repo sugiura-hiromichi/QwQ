@@ -4,3 +4,4 @@ Cargo.lock
 img/
 *.pdf
 !report.pdf
+.ignore_*

@@ -13,38 +13,41 @@ def is_valid_email(email):
 
 def validate_email(APIresponseObject):
 	api_data = json.loads(APIresponseObject)
+	print(api_data)
 	if (api_data.get("deliverability") == "DELIVERABLE" and float(api_data.get("quality_score")) > 0.99):
 		return True
 	else:
 		return False
 
 
-valid_mails = open("valid_mails.txt", "w")
+is_valid_email("sugiura.hiromichi.2r@st.kyoto-u.ac.jp")
 
-try:
-	f = open("prof_list.txt")
-	lines = f.readlines()
-	for line in lines:
-		line = "mail_list/" + line.replace("\n", "")
-		try:
-			mail_list = open(line + ".txt")
-			mails = mail_list.readlines()
-			for mail in mails:
-				mail = mail.replace("\n", "")
-				if is_valid_email(mail):
-					valid_mails.write(mail + "\n")
-			valid_mails.write("\n")
-			valid_mails.flush()
-		except FileNotFoundError as e3:
-			print("🫠🫠" + str(e3))
-		finally:
-			mail_list.close()
-	valid_mails.write("\n")
-	valid_mails.flush()
-
-except FileNotFoundError as e2:
-	print("🫠" + str(e2))
-finally:
-	f.close()
-
-valid_mails.close()
+# valid_mails = open("valid_mails.txt", "w")
+#
+# try:
+# 	f = open("prof_list.txt")
+# 	lines = f.readlines()
+# 	for line in lines:
+# 		line = "mail_list/" + line.replace("\n", "")
+# 		try:
+# 			mail_list = open(line + ".txt")
+# 			mails = mail_list.readlines()
+# 			for mail in mails:
+# 				mail = mail.replace("\n", "")
+# 				if is_valid_email(mail):
+# 					valid_mails.write(mail + "\n")
+# 			valid_mails.write("\n")
+# 			valid_mails.flush()
+# 		except FileNotFoundError as e3:
+# 			print("🫠🫠" + str(e3))
+# 		finally:
+# 			mail_list.close()
+# 	valid_mails.write("\n")
+# 	valid_mails.flush()
+#
+# except FileNotFoundError as e2:
+# 	print("🫠" + str(e2))
+# finally:
+# 	f.close()
+#
+# valid_mails.close()
