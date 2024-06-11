@@ -1,0 +1,5 @@
+from centos:7 as build1
+copy check.sh /
+run yum install -y httpd && echo "Hello Docker" > /var/www/html/test.html && chmod +x /check.sh
+healthcheck --timeout=1s --interval=1s --retries=3 cmd /check.sh || exit 1
+entrypoint ["/usr/sbin/httpd","-DFOREGROUND"]

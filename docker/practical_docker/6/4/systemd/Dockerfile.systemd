@@ -1,0 +1,9 @@
+from centos:7
+run yum groupinstall -y "Server with GUI" && yum install -y tigervnc-server
+copy vnc_serv2.service /etc/systemd/system/
+copy vnc_serv3.service /etc/systemd/system/
+copy vnc_serv4.service /etc/systemd/system/
+run systemctl enable vnc_serv2.service && systemctl enable vnc_serv3.service && systemctl enable vnc_serv4.service \
+&& mkdir -p /root/.vnc && echo "password" | /usr/bin/vncpasswd -f > /root/.vnc/passwd && chmod 600 /root/.vnc/passwd \
+&& echo "password" | passwd root --stdin && systemctl disable firewalld
+expose 5902 5903 5904

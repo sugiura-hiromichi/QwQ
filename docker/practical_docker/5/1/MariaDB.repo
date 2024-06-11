@@ -1,0 +1,5 @@
+[mariadb]
+name=MariaDB
+baseurl=http://yum.mariadb.org/10.4/centos7-aarch64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEEY-MariaDB
+gpgcheck=1

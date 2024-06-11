@@ -1,0 +1,23 @@
+services:
+   wordpress:
+      image: wordpress:latest
+      links:
+         - db:mysql
+      networks:
+         mynet:
+      depends_on:
+         - db
+   db:
+      image: mariadb:latest
+      environment:
+         MYSQL_ROOT_PASSWORD: password123
+      networks:
+         mynet:
+            ipv4_address: 172.20.0.2
+networks:
+   mynet:
+      driver: bridge
+      ipam:
+         driver: default
+         config:
+            - subnet: 172.20.0.0/24

@@ -1,0 +1,11 @@
+from centos:7 as build1
+run yum install -y gcc-gfortran libgfortran-static libquadmath-static
+copy pi.f /tmp
+workdir /tmp
+run gfortran -c -o pi.static.o pi.f
+run gfortran pi.static.o \
+/usr/lib/gcc/aarch64-redhat-linux/4.8.2/libgfortran.a -static-libgfortran -staatic-libgcc -o pi.static
+
+from centos:7 as run1
+copy --from=build1 /tmp/pi.static /usr/local/bin/
+cmd ["/usr/local/bin/pi.static"]

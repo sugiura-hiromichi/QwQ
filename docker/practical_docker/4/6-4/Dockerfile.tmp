@@ -1,0 +1,2 @@
+from centos:7
+run yum install -y gcc-gfortran libgfortran-static libquadmath-static

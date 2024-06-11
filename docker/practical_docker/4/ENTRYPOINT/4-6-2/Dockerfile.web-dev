@@ -1,0 +1,9 @@
+from web:2
+copy index1.html /var/www/html
+copy index2.html /var/www/html
+copy index3.html /var/www/html
+run hostname >> /var/www/html/index1.html
+run date >> /var/www/html/index2.html
+run uname -r >> /var/www/html/index3.html
+run date >> /var/www/html/default1.html
+run date >> /var/www/html/default2.html

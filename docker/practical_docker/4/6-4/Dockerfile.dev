@@ -1,0 +1,7 @@
+from centos:7
+run yum install -y gcc
+copy pi.c /tmp
+workdir /tmp
+run gcc -std=c99 -o pi.out pi.c
+run mv /tmp/pi.out /usr/local/bin
+cmd ["/usr/local/bin/pi.out"]

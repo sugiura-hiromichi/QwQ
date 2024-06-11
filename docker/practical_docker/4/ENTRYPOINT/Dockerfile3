@@ -1,0 +1,4 @@
+from ubuntu
+add foo3.sh /usr/local/bin/
+run chmod +x /usr/local/bin/foo3.sh
+entrypoint ["/usr/local/bin/foo3.sh"]
