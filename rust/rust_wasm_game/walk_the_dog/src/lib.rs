@@ -14,7 +14,7 @@ pub fn main_js() -> Result<(), JsValue,> {
 	console_error_panic_hook::set_once();
 
 	// Your code goes here!
-	// get canvas context
+	// show triangle(chapter1)
 	let win = web_sys::window().unwrap();
 	let doc = win.document().unwrap();
 	let canvas = doc
@@ -30,13 +30,46 @@ pub fn main_js() -> Result<(), JsValue,> {
 		.unwrap();
 
 	spsk(
-		context,
+		context.clone(),
 		(0, 0, 255,),
 		(300.0, 0.0,),
 		(0.0, 600.0,),
 		(600.0, 600.0,),
 		5,
 	);
+
+	// load img
+	wasm_bindgen_futures::spawn_local(async move {
+		let (success_tx, success_rx,) =
+			futures::channel::oneshot::channel::<Result<(), JsValue,>,>();
+		let success_tx =
+			std::rc::Rc::new(std::sync::Mutex::new(Some(success_tx,),),);
+		let error_tx = std::rc::Rc::clone(&success_tx,);
+
+		let img = web_sys::HtmlImageElement::new().unwrap();
+
+		let callback = Closure::once(move || {
+			if let Some(success_tx,) =
+				success_tx.lock().ok().and_then(|mut opt| opt.take(),)
+			{
+				let _ = success_tx.send(Ok((),),);
+			}
+		},);
+		let err_callback = Closure::once(move |e| {
+			if let Some(error_tx,) =
+				error_tx.lock().ok().and_then(|mut opt| opt.take(),)
+			{
+				let _ = error_tx.send(Err(e,),);
+			}
+		},);
+
+		img.set_onload(Some(callback.as_ref().unchecked_ref(),),);
+		img.set_onerror(Some(err_callback.as_ref().unchecked_ref(),),);
+		img.set_src("Idle (1).png",);
+
+		let _ = success_rx.await;
+		let _ = context.draw_image_with_html_image_element(&img, 0.0, 0.0,);
+	},);
 
 	Ok((),)
 }
