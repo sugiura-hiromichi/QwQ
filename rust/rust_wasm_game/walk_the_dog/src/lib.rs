@@ -1,17 +1,36 @@
-use std::ops::Range;
-
-use rand::prelude::*;
+use gloo_utils::format::JsValueSerdeExt;
+use serde::Deserialize;
+use std::collections::HashMap;
 use wasm_bindgen::prelude::*;
 use wasm_bindgen::JsCast;
 use web_sys::console;
 use web_sys::CanvasRenderingContext2d;
 // TODO: implement mutable args number macos of `console!()`
 
+#[derive(Deserialize,)]
+struct Sheet {
+	frames: HashMap<String, Cell,>,
+}
+
+#[derive(Deserialize,)]
+struct Cell {
+	frame: Rect,
+}
+
+#[derive(Deserialize,)]
+struct Rect {
+	x: u16,
+	y: u16,
+	w: u16,
+	h: u16,
+}
+
 // This is like the `main` function, except for JavaScript.
 #[wasm_bindgen(start)]
 pub fn main_js() -> Result<(), JsValue,> {
 	// redirect any panic to browser's console
 	console_error_panic_hook::set_once();
+	console::log_1(&wasm_bindgen::JsValue::from_str("🫠🫠🫠🫠",),);
 
 	// Your code goes here!
 	// show triangle(chapter1)
@@ -29,100 +48,85 @@ pub fn main_js() -> Result<(), JsValue,> {
 		.dyn_into::<web_sys::CanvasRenderingContext2d>()
 		.unwrap();
 
-	spsk(
-		context.clone(),
-		(0, 0, 255,),
-		(300.0, 0.0,),
-		(0.0, 600.0,),
-		(600.0, 600.0,),
-		5,
-	);
-
 	// load img
 	wasm_bindgen_futures::spawn_local(async move {
-		let (success_tx, success_rx,) =
-			futures::channel::oneshot::channel::<Result<(), JsValue,>,>();
-		let success_tx =
-			std::rc::Rc::new(std::sync::Mutex::new(Some(success_tx,),),);
-		let error_tx = std::rc::Rc::clone(&success_tx,);
-
 		let img = web_sys::HtmlImageElement::new().unwrap();
+		let jsn =
+			fetch_json("rhb.json",).await.expect("failed to fetch rhb.json🫠",);
+		let sheet: Sheet = jsn
+			.into_serde()
+			.expect("failed to convert rhb.json into a Sheet struct",);
+		load_img("rhb.png", &img,).await;
 
-		let callback = Closure::once(move || {
-			if let Some(success_tx,) =
-				success_tx.lock().ok().and_then(|mut opt| opt.take(),)
-			{
-				let _ = success_tx.send(Ok((),),);
-			}
-		},);
-		let err_callback = Closure::once(move |e| {
-			if let Some(error_tx,) =
-				error_tx.lock().ok().and_then(|mut opt| opt.take(),)
-			{
-				let _ = error_tx.send(Err(e,),);
-			}
-		},);
+		let mut f = 0;
+		let interval_callback = Closure::wrap(Box::new(move || {
+			f = f % 8 + 1;
+			let sprite = sheet
+				.frames
+				.get(&format!("Run ({f}).png"),)
+				.expect("Cell not found",);
 
-		img.set_onload(Some(callback.as_ref().unchecked_ref(),),);
-		img.set_onerror(Some(err_callback.as_ref().unchecked_ref(),),);
-		img.set_src("Idle (1).png",);
-
-		let _ = success_rx.await;
-		let _ = context.draw_image_with_html_image_element(&img, 0.0, 0.0,);
+			context.clear_rect(0.0, 0.0, 600.0, 600.0,);
+			let _=context.
+			draw_image_with_html_image_element_and_sw_and_sh_and_dx_and_dy_and_dw_and_dh(
+				&img,
+				sprite.frame.x.into(),
+				sprite.frame.y.into(),
+				sprite.frame.w.into(),
+				sprite.frame.h.into(),
+				300.0,
+				300.0,
+				sprite.frame.w.into(),
+				sprite.frame.h.into(),
+				);
+		},) as Box<dyn FnMut(),>,);
+		let _ = win.set_interval_with_callback_and_timeout_and_arguments_0(
+			interval_callback.as_ref().unchecked_ref(),
+			50,
+		);
+		interval_callback.forget();
 	},);
 
 	Ok((),)
 }
 
-fn drw_tri(
-	context: &CanvasRenderingContext2d,
-	color: (u8, u8, u8,),
-	a: (f64, f64,),
-	b: (f64, f64,),
-	c: (f64, f64,),
-) {
-	context.set_fill_style(&wasm_bindgen::JsValue::from_str(&format!(
-		"rgb({},{},{})",
-		color.0, color.1, color.2
-	),),);
-	context.move_to(a.0, a.1,);
-	context.begin_path();
-	context.line_to(b.0, b.1,);
-	context.line_to(c.0, c.1,);
-	context.line_to(a.0, a.1,);
-	context.close_path();
-	context.stroke();
-	context.fill();
+async fn load_img(s: &str, img: &web_sys::HtmlImageElement,) {
+	let (success_tx, success_rx,) =
+		futures::channel::oneshot::channel::<Result<(), JsValue,>,>();
+
+	let success_tx =
+		std::rc::Rc::new(std::sync::Mutex::new(Some(success_tx,),),);
+	let error_tx = std::rc::Rc::clone(&success_tx,);
+
+	let callback = Closure::once(move || {
+		if let Some(success_tx,) =
+			success_tx.lock().ok().and_then(|mut opt| opt.take(),)
+		{
+			let _ = success_tx.send(Ok((),),);
+		}
+	},);
+	let err_callback = Closure::once(move |e| {
+		if let Some(error_tx,) =
+			error_tx.lock().ok().and_then(|mut opt| opt.take(),)
+		{
+			let _ = error_tx.send(Err(e,),);
+		}
+	},);
+
+	img.set_onload(Some(callback.as_ref().unchecked_ref(),),);
+	img.set_onerror(Some(err_callback.as_ref().unchecked_ref(),),);
+	img.set_src(s,);
+
+	let _ = success_rx.await;
 }
 
-fn spsk(
-	context: CanvasRenderingContext2d,
-	color: (u8, u8, u8,),
-	a: (f64, f64,),
-	b: (f64, f64,),
-	c: (f64, f64,),
-	mut depth: usize,
-) {
-	if depth != 0 {
-		depth -= 1;
-		drw_tri(&context, color, a, b, c,);
+async fn fetch_json(json_path: &str,) -> Result<JsValue, JsValue,> {
+	let w = web_sys::window().unwrap();
+	let rsp_val =
+		wasm_bindgen_futures::JsFuture::from(w.fetch_with_str(json_path,),)
+			.await?;
 
-		let rng = 0..255;
-		let gen = |range: Range<i32,>| -> (u8, u8, u8,) {
-			let mut rng = thread_rng();
-			(
-				rng.gen_range(range.clone(),).try_into().unwrap(),
-				rng.gen_range(range.clone(),).try_into().unwrap(),
-				rng.gen_range(range,).try_into().unwrap(),
-			)
-		};
-		let n_color = gen(rng,);
-		let n_a = ((a.0 + b.0) / 2.0, (a.1 + b.1) / 2.0,);
-		let n_b = ((c.0 + b.0) / 2.0, (c.1 + b.1) / 2.0,);
-		let n_c = ((c.0 + a.0) / 2.0, (c.1 + a.1) / 2.0,);
+	let rsp: web_sys::Response = rsp_val.dyn_into()?;
 
-		spsk(context.clone(), n_color, a, n_a, n_c, depth,);
-		spsk(context.clone(), n_color, n_a, b, n_b, depth,);
-		spsk(context, n_color, n_b, c, n_c, depth,);
-	}
+	wasm_bindgen_futures::JsFuture::from(rsp.json()?,).await
 }

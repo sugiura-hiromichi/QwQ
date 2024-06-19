@@ -24,17 +24,19 @@ lto = true
 # The `wasm-bindgen` crate provides the bare minimum functionality needed
 # to interact with JavaScript.
 wasm-bindgen = "0.2.*"
+gloo-utils={version="0.1",features=["serde"]}
 console_error_panic_hook = "0.1.*"
 rand="*"
 getrandom={version="*",features=["js"]}
 futures="0.3.*"
 wasm-bindgen-futures="0.4.*"
+serde={version="1.0.*",features=["derive"]}
 
 # The `web-sys` crate allows you to interact with the various browser APIs,
 # like the DOM.
 [dependencies.web-sys]
 version = "0.3.*"
-features=["console","Window","Document","HtmlCanvasElement","HtmlImageElement","CanvasRenderingContext2d"]
+features=["Response","console","Window","Document","HtmlCanvasElement","HtmlImageElement","CanvasRenderingContext2d"]
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
 # logging them with `console.error`. This is great for development, but requires
